@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Red circle background -->
+  <circle cx="256" cy="256" r="256" fill="#c41230"/>
+
+  <!-- Toy Story-style fluffy white cloud — built from overlapping circles -->
+  <!-- Main cloud body (base) -->
+  <ellipse cx="256" cy="310" rx="145" ry="72" fill="white"/>
+  <!-- Bumps on top -->
+  <circle cx="160" cy="285" r="62" fill="white"/>
+  <circle cx="210" cy="258" r="72" fill="white"/>
+  <circle cx="272" cy="248" r="80" fill="white"/>
+  <circle cx="336" cy="268" r="58" fill="white"/>
+  <circle cx="370" cy="295" r="48" fill="white"/>
+  <!-- Fill in gaps at bottom -->
+  <rect x="111" y="300" width="290" height="90" fill="white" rx="10"/>
+
+  <!-- Curly K in black, centred -->
+  <!-- Using a path for a hand-lettered curly K feel -->
+  <text
+    x="256" y="330"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="175"
+    font-weight="900"
+    font-style="italic"
+    fill="#1a1a1a"
+    letter-spacing="-5"
+  >K</text>
+</svg>

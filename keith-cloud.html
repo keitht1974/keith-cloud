@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keith Cloud</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPCEtLSBSZWQgY2lyY2xlIGJhY2tncm91bmQgLS0+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNjNDEyMzAiLz4KCiAgPCEtLSBUb3kgU3Rvcnktc3R5bGUgZmx1ZmZ5IHdoaXRlIGNsb3VkIOKAlCBidWlsdCBmcm9tIG92ZXJsYXBwaW5nIGNpcmNsZXMgLS0+CiAgPCEtLSBNYWluIGNsb3VkIGJvZHkgKGJhc2UpIC0tPgogIDxlbGxpcHNlIGN4PSIyNTYiIGN5PSIzMTAiIHJ4PSIxNDUiIHJ5PSI3MiIgZmlsbD0id2hpdGUiLz4KICA8IS0tIEJ1bXBzIG9uIHRvcCAtLT4KICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIyODUiIHI9IjYyIiBmaWxsPSJ3aGl0ZSIvPgogIDxjaXJjbGUgY3g9IjIxMCIgY3k9IjI1OCIgcj0iNzIiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMjcyIiBjeT0iMjQ4IiByPSI4MCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIzMzYiIGN5PSIyNjgiIHI9IjU4IiBmaWxsPSJ3aGl0ZSIvPgogIDxjaXJjbGUgY3g9IjM3MCIgY3k9IjI5NSIgcj0iNDgiIGZpbGw9IndoaXRlIi8+CiAgPCEtLSBGaWxsIGluIGdhcHMgYXQgYm90dG9tIC0tPgogIDxyZWN0IHg9IjExMSIgeT0iMzAwIiB3aWR0aD0iMjkwIiBoZWlnaHQ9IjkwIiBmaWxsPSJ3aGl0ZSIgcng9IjEwIi8+CgogIDwhLS0gQ3VybHkgSyBpbiBibGFjaywgY2VudHJlZCAtLT4KICA8IS0tIFVzaW5nIGEgcGF0aCBmb3IgYSBoYW5kLWxldHRlcmVkIGN1cmx5IEsgZmVlbCAtLT4KICA8dGV4dAogICAgeD0iMjU2IiB5PSIzMzAiCiAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIKICAgIGZvbnQtc2l6ZT0iMTc1IgogICAgZm9udC13ZWlnaHQ9IjkwMCIKICAgIGZvbnQtc3R5bGU9Iml0YWxpYyIKICAgIGZpbGw9IiMxYTFhMWEiCiAgICBsZXR0ZXItc3BhY2luZz0iLTUiCiAgPks8L3RleHQ+Cjwvc3ZnPgo=">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPCEtLSBSZWQgY2lyY2xlIGJhY2tncm91bmQgLS0+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNjNDEyMzAiLz4KCiAgPCEtLSBUb3kgU3Rvcnktc3R5bGUgZmx1ZmZ5IHdoaXRlIGNsb3VkIOKAlCBidWlsdCBmcm9tIG92ZXJsYXBwaW5nIGNpcmNsZXMgLS0+CiAgPCEtLSBNYWluIGNsb3VkIGJvZHkgKGJhc2UpIC0tPgogIDxlbGxpcHNlIGN4PSIyNTYiIGN5PSIzMTAiIHJ4PSIxNDUiIHJ5PSI3MiIgZmlsbD0id2hpdGUiLz4KICA8IS0tIEJ1bXBzIG9uIHRvcCAtLT4KICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIyODUiIHI9IjYyIiBmaWxsPSJ3aGl0ZSIvPgogIDxjaXJjbGUgY3g9IjIxMCIgY3k9IjI1OCIgcj0iNzIiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMjcyIiBjeT0iMjQ4IiByPSI4MCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIzMzYiIGN5PSIyNjgiIHI9IjU4IiBmaWxsPSJ3aGl0ZSIvPgogIDxjaXJjbGUgY3g9IjM3MCIgY3k9IjI5NSIgcj0iNDgiIGZpbGw9IndoaXRlIi8+CiAgPCEtLSBGaWxsIGluIGdhcHMgYXQgYm90dG9tIC0tPgogIDxyZWN0IHg9IjExMSIgeT0iMzAwIiB3aWR0aD0iMjkwIiBoZWlnaHQ9IjkwIiBmaWxsPSJ3aGl0ZSIgcng9IjEwIi8+CgogIDwhLS0gQ3VybHkgSyBpbiBibGFjaywgY2VudHJlZCAtLT4KICA8IS0tIFVzaW5nIGEgcGF0aCBmb3IgYSBoYW5kLWxldHRlcmVkIGN1cmx5IEsgZmVlbCAtLT4KICA8dGV4dAogICAgeD0iMjU2IiB5PSIzMzAiCiAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIKICAgIGZvbnQtc2l6ZT0iMTc1IgogICAgZm9udC13ZWlnaHQ9IjkwMCIKICAgIGZvbnQtc3R5bGU9Iml0YWxpYyIKICAgIGZpbGw9IiMxYTFhMWEiCiAgICBsZXR0ZXItc3BhY2luZz0iLTUiCiAgPks8L3RleHQ+Cjwvc3ZnPgo=">
+  <meta name="apple-mobile-web-app-title" content="Keith Cloud">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1a1a;
+      --mist:       #f0eeeb;
+      --paper:      #faf9f7;
+      --stone:      #9a9590;
+      --rule:       #e0ddd8;
+      --focus:      #2d6a4f;
+      --focus-lt:   #d8ede4;
+      --amber:      #c76b1a;
+      --amber-lt:   #fbeedd;
+      --sky:        #1d4e89;
+      --sky-lt:     #dde8f5;
+      --uk:         #c41230;
+      --uk-lt:      #fde8ec;
+      --like:       #16a34a;
+      --like-lt:    #dcfce7;
+      --dislike:    #dc2626;
+      --dislike-lt: #fee2e2;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; line-height: 1.6; min-height: 100vh; }
+
+    /* MASTHEAD */
+    .masthead { background: var(--ink); color: white; padding: 0 2rem; display: flex; align-items: stretch; border-bottom: 3px solid var(--focus); }
+    .masthead-brand { display: flex; flex-direction: column; justify-content: center; padding: 1.25rem 2rem 1.25rem 0; border-right: 1px solid rgba(255,255,255,0.12); }
+    .masthead-brand h1 { font-family: 'DM Serif Display', serif; font-size: 1.75rem; letter-spacing: -0.02em; line-height: 1; color: white; }
+    .masthead-brand h1 span { color: #5cb88a; }
+    .masthead-brand p { font-size: 0.68rem; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.3rem; font-family: 'DM Mono', monospace; }
+    .masthead-meta { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 1.25rem; padding-left: 2rem; }
+    #clock { font-family: 'DM Mono', monospace; font-size: 1.1rem; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; }
+    #date-display { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
+    .weather-link { display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.78rem; color: rgba(255,255,255,0.65); text-decoration: none; }
+    .weather-link:hover { background: rgba(255,255,255,0.12); color: white; }
+    .taste-toggle { display: flex; align-items: center; gap: 0.5rem; background: rgba(45,106,79,0.3); border: 1px solid rgba(45,106,79,0.6); padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.78rem; color: rgba(255,255,255,0.8); cursor: pointer; transition: all 0.15s; }
+    .taste-toggle:hover { background: rgba(45,106,79,0.5); color: white; }
+    #taste-count { background: var(--focus); color: white; border-radius: 100px; font-size: 0.6rem; min-width: 16px; height: 16px; padding: 0 4px; display: inline-flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; }
+
+    /* NAV */
+    .nav-strip { background: var(--mist); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; overflow-x: auto; scrollbar-width: none; }
+    .nav-strip::-webkit-scrollbar { display: none; }
+    .nav-pill { display: flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; color: var(--stone); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.15s; background: none; border-top: none; border-left: none; border-right: none; text-transform: uppercase; }
+    .nav-pill:hover { color: var(--ink); }
+    .nav-pill.active { color: var(--focus); border-bottom-color: var(--focus); }
+
+    /* LAYOUT */
+    .layout { max-width: 1400px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(3, 1fr) 290px; gap: 1.5rem; }
+    .col { display: flex; flex-direction: column; gap: 1.25rem; }
+    .col-span-2 { grid-column: span 2; }
+    .col-span-3 { grid-column: span 3; }
+    .sidebar { grid-column: 4; }
+
+    /* SECTION LABELS */
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* CARDS */
+    .card { background: white; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+    .card-header { padding: 0.85rem 1rem; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; }
+    .card-header h2 { font-family: 'DM Serif Display', serif; font-size: 1rem; font-weight: 400; display: flex; align-items: center; gap: 0.5rem; }
+    .card-header a { font-size: 0.7rem; color: var(--stone); text-decoration: none; font-family: 'DM Mono', monospace; }
+    .card-header a:hover { color: var(--focus); }
+    .tag-chip { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 20px; font-size: 0.6rem; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; margin-left: 0.3rem; }
+    .tag-uk   { background: var(--uk-lt);    color: var(--uk); }
+    .tag-gear { background: var(--amber-lt); color: var(--amber); }
+    .tag-run  { background: var(--focus-lt); color: var(--focus); }
+    .tag-glob { background: var(--sky-lt);   color: var(--sky); }
+
+    /* SKELETON */
+    .skeleton { background: linear-gradient(90deg, var(--mist) 25%, #e8e5e0 50%, var(--mist) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 4px; }
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+    .skel-thumb { width: 100%; height: 160px; border-radius: 0; }
+    .skel-line { height: 12px; margin: 6px 12px; }
+    .skel-line.short { width: 40%; }
+    .skel-line.med   { width: 70%; }
+    .skel-line.long  { width: 90%; }
+    .skel-wrap { padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+    .skel-wrap:last-child { border-bottom: none; }
+
+    /* ARTICLE CARD — thumbnail on top */
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      transition: background 0.1s;
+    }
+    .article-card:last-of-type { border-bottom: none; }
+    .article-card.liked   { background: #f0fdf4; }
+    .article-card.disliked { opacity: 0.45; }
+    .article-card.disliked:hover { opacity: 0.7; }
+
+    .article-thumb {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      background: var(--mist);
+      flex-shrink: 0;
+    }
+    .article-thumb-placeholder {
+      width: 100%;
+      height: 140px;
+      background: var(--mist);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+    .article-body {
+      padding: 0.75rem 1rem 0.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .article-source {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .article-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--ink);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .article-title:hover { color: var(--focus); }
+    .article-date { font-size: 0.67rem; color: var(--stone); }
+
+    /* ACTION ROW */
+    .article-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0 0.75rem 0.65rem;
+    }
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 20px;
+      border: 1px solid var(--rule);
+      background: none;
+      font-size: 0.68rem;
+      cursor: pointer;
+      color: var(--stone);
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.12s;
+      white-space: nowrap;
+    }
+    .action-btn:hover  { color: var(--ink); border-color: #bbb; background: var(--mist); }
+    .action-btn.like-active    { background: var(--like-lt);    color: var(--like);    border-color: var(--like); }
+    .action-btn.dislike-active { background: var(--dislike-lt); color: var(--dislike); border-color: var(--dislike); }
+    .action-btn.share-copied   { background: var(--focus-lt);   color: var(--focus);   border-color: var(--focus); }
+    .spacer { flex: 1; }
+
+    /* MULTI-COLUMN FEED (2 or 3 cols inside a card) */
+    .feed-grid { display: grid; gap: 0; }
+    .feed-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    .feed-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .feed-grid .article-card { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .feed-grid .article-card:nth-child(2n)   { border-right: none; }
+    .feed-grid.cols-3 .article-card:nth-child(2n)   { border-right: 1px solid var(--rule); }
+    .feed-grid.cols-3 .article-card:nth-child(3n)   { border-right: none; }
+
+    /* HERO CARD */
+    .hero-card { background: white; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+    .hero-banner { background: linear-gradient(135deg, #1a1a1a 0%, #2d3a2e 100%); padding: 1.75rem; position: relative; overflow: hidden; min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .hero-banner::before { content: '◉'; position: absolute; top: -20px; right: 20px; font-size: 130px; color: rgba(255,255,255,0.04); line-height: 1; }
+    .hero-banner h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: white; line-height: 1.2; }
+    .hero-banner p { font-size: 0.76rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+    .hero-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.72rem 1rem; border-bottom: 1px solid var(--rule); text-decoration: none; color: inherit; transition: background 0.1s; }
+    .hero-link:last-child { border-bottom: none; }
+    .hero-link:hover { background: var(--mist); }
+    .hero-link-icon { width: 32px; height: 32px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+    .hero-link-text { flex: 1; }
+    .hero-link-text strong { font-size: 0.82rem; font-weight: 500; display: block; }
+    .hero-link-text span { font-size: 0.7rem; color: var(--stone); }
+
+    /* SEARCH */
+    .search-card { background: white; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem; }
+    .search-wrap { display: flex; gap: 0.5rem; align-items: center; background: var(--mist); border: 1px solid var(--rule); border-radius: 8px; padding: 0.5rem 0.75rem; }
+    .search-wrap input { flex: 1; border: none; background: none; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--ink); outline: none; }
+    .search-wrap input::placeholder { color: var(--stone); }
+    .search-wrap button { background: var(--focus); border: none; color: white; border-radius: 5px; padding: 0.3rem 0.75rem; font-size: 0.78rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .search-engines { display: flex; gap: 0.4rem; margin-top: 0.6rem; flex-wrap: wrap; }
+    .se-btn { font-size: 0.68rem; padding: 0.2rem 0.55rem; border: 1px solid var(--rule); border-radius: 4px; background: none; cursor: pointer; color: var(--stone); font-family: 'DM Mono', monospace; letter-spacing: 0.04em; transition: all 0.1s; }
+    .se-btn.active, .se-btn:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+    /* SIDEBAR QUICK LINKS */
+    .quick-links { padding: 0.4rem 0; }
+    .quick-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; text-decoration: none; color: var(--ink); font-size: 0.8rem; transition: background 0.1s; }
+    .quick-link:hover { background: var(--mist); }
+    .quick-link .ql-icon { font-size: 0.95rem; width: 1.4rem; text-align: center; }
+    .quick-link .ql-label { flex: 1; }
+    .quick-link .ql-tag { font-family: 'DM Mono', monospace; font-size: 0.57rem; color: var(--stone); letter-spacing: 0.05em; text-transform: uppercase; }
+    .divider { height: 1px; background: var(--rule); margin: 0.3rem 0; }
+
+    /* ERROR STATE */
+    .feed-error { padding: 1.25rem; text-align: center; color: var(--stone); font-size: 0.8rem; }
+    .feed-error a { color: var(--focus); }
+
+    /* TASTE PANEL */
+    .taste-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; backdrop-filter: blur(2px); }
+    .taste-overlay.open { display: flex; justify-content: flex-end; }
+    .taste-panel { background: white; width: 380px; max-width: 100vw; height: 100%; overflow-y: auto; box-shadow: -4px 0 24px rgba(0,0,0,0.15); display: flex; flex-direction: column; }
+    .taste-panel-header { background: var(--ink); color: white; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1; }
+    .taste-panel-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; }
+    .taste-panel-header p { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 0.15rem; }
+    .taste-close { background: rgba(255,255,255,0.1); border: none; color: white; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 0.9rem; }
+    .taste-close:hover { background: rgba(255,255,255,0.2); }
+    .taste-body { padding: 1.25rem; flex: 1; }
+    .taste-section { margin-bottom: 1.5rem; }
+    .taste-section h3 { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.7rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule); }
+    .taste-bar-item { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.45rem; }
+    .taste-bar-label { font-size: 0.78rem; min-width: 110px; flex-shrink: 0; }
+    .taste-bar-track { flex: 1; height: 6px; background: var(--mist); border-radius: 3px; overflow: hidden; }
+    .taste-bar-fill { height: 100%; border-radius: 3px; background: var(--focus); transition: width 0.4s; }
+    .taste-bar-fill.neg { background: var(--dislike); }
+    .taste-count-num { font-family: 'DM Mono', monospace; font-size: 0.67rem; color: var(--stone); min-width: 20px; text-align: right; }
+    .liked-item { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+    .liked-item:last-child { border-bottom: none; }
+    .liked-item-thumb { width: 100%; height: 80px; object-fit: cover; border-radius: 5px; margin-bottom: 0.4rem; background: var(--mist); }
+    .liked-item-title { font-size: 0.8rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+    .liked-item-meta { font-size: 0.67rem; color: var(--stone); margin-top: 0.1rem; font-family: 'DM Mono', monospace; }
+    .liked-item-link { color: var(--focus); text-decoration: none; font-size: 0.7rem; }
+    .taste-empty { text-align: center; padding: 2rem 1rem; color: var(--stone); font-size: 0.82rem; line-height: 1.6; }
+    .taste-empty .big { font-size: 2rem; margin-bottom: 0.5rem; }
+    .taste-footer { padding: 1rem 1.25rem; border-top: 1px solid var(--rule); display: flex; gap: 0.5rem; }
+    .taste-btn { flex: 1; padding: 0.5rem; border-radius: 6px; border: 1px solid var(--rule); background: none; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; cursor: pointer; color: var(--stone); transition: all 0.1s; }
+    .taste-btn:hover { background: var(--mist); color: var(--ink); }
+    .taste-btn.danger:hover { background: var(--dislike-lt); color: var(--dislike); border-color: var(--dislike); }
+
+    /* TOAST */
+    #toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--ink); color: white; padding: 0.6rem 1.25rem; border-radius: 8px; font-size: 0.82rem; z-index: 200; transition: transform 0.3s; white-space: nowrap; pointer-events: none; }
+    #toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1150px) {
+      .layout { grid-template-columns: 1fr 1fr; }
+      .sidebar { grid-column: span 2; }
+      .col-span-3 { grid-column: span 2; }
+    }
+    @media (max-width: 660px) {
+      .layout { grid-template-columns: 1fr; padding: 1rem; gap: 1rem; }
+      .sidebar, .col-span-2, .col-span-3 { grid-column: span 1; }
+      .feed-grid.cols-2, .feed-grid.cols-3 { grid-template-columns: 1fr; }
+      .masthead { flex-direction: column; padding: 1rem; gap: 0.5rem; }
+      .masthead-meta { justify-content: flex-start; flex-wrap: wrap; gap: 0.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+
+<div class="taste-overlay" id="taste-overlay" onclick="closeTasteOverlay(event)">
+  <div class="taste-panel" onclick="event.stopPropagation()">
+    <div class="taste-panel-header">
+      <div><h2>Your Taste Profile</h2><p>Built from likes, dislikes &amp; shares</p></div>
+      <button class="taste-close" onclick="closeTastePanel()">✕</button>
+    </div>
+    <div class="taste-body" id="taste-body"></div>
+    <div class="taste-footer">
+      <button class="taste-btn" onclick="exportTaste()">📤 Export</button>
+      <button class="taste-btn danger" onclick="clearTaste()">🗑 Reset</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-brand">
+    <h1>Keith <span>Cloud</span></h1>
+    <p>Personal · Curated · No Algorithm</p>
+  </div>
+  <div class="masthead-meta">
+    <div>
+      <div id="clock">--:--</div>
+      <div id="date-display">—</div>
+    </div>
+    <a class="weather-link" href="https://www.metoffice.gov.uk/weather/forecast/gcpvj0v07" target="_blank" rel="noopener">⛅ UK Weather →</a>
+    <button class="taste-toggle" onclick="openTastePanel()">✦ My Taste <span id="taste-count">0</span></button>
+  </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem;">
+      <button id="refresh-btn" onclick="refreshAllFeeds()" style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.45rem 0.9rem;border-radius:6px;font-size:0.78rem;color:rgba(255,255,255,0.75);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;">
+        <span id="refresh-icon">↻</span> Refresh
+      </button>
+      <div id="last-updated" style="font-family:'DM Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">Never refreshed</div>
+    </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav-strip">
+  <button class="nav-pill active" onclick="scrollTo('s-uk')">🇬🇧 UK News</button>
+  <button class="nav-pill" onclick="scrollTo('s-photo')">📷 Photography</button>
+  <button class="nav-pill" onclick="scrollTo('s-gear')">⚙️ Gear & Tech</button>
+  <button class="nav-pill" onclick="scrollTo('s-design')">🏠 Design & Home</button>
+  <button class="nav-pill" onclick="scrollTo('s-running')">🏃 Running</button>
+  <button class="nav-pill" onclick="scrollTo('s-garden')">🌱 Garden</button>
+  <button class="nav-pill" onclick="scrollTo('s-global')">🌍 Global</button>
+  <button class="nav-pill" onclick="scrollTo('s-links')">🔗 Links</button>
+</nav>
+
+<main class="layout">
+
+  <!-- ── SEARCH + UK NEWS ── -->
+  <div class="col">
+    <div class="search-card">
+      <div class="section-label">Search</div>
+      <div class="search-wrap">
+        <span>🔍</span>
+        <input type="text" id="search-input" placeholder="Search the web…" />
+        <button onclick="doSearch()">Go</button>
+      </div>
+      <div class="search-engines">
+        <button class="se-btn active" onclick="setEngine('ddg',this)">DuckDuckGo</button>
+        <button class="se-btn" onclick="setEngine('google',this)">Google</button>
+        <button class="se-btn" onclick="setEngine('bing',this)">Bing</button>
+        <button class="se-btn" onclick="setEngine('brave',this)">Brave</button>
+        <button class="se-btn" onclick="setEngine('ecosia',this)">Ecosia</button>
+      </div>
+    </div>
+
+    <!-- Sidebar quick links tucked in first column -->
+    <div class="card" id="s-links" style="scroll-margin-top:3rem;">
+      <div class="card-header"><h2>🔗 Quick Links</h2></div>
+      <div class="quick-links">
+        <a class="quick-link" href="https://www.bbc.co.uk/weather" target="_blank" rel="noopener"><span class="ql-icon">⛅</span><span class="ql-label">BBC Weather</span><span class="ql-tag">UK</span></a>
+        <a class="quick-link" href="https://www.nationalrail.co.uk" target="_blank" rel="noopener"><span class="ql-icon">🚆</span><span class="ql-label">National Rail</span><span class="ql-tag">UK</span></a>
+        <a class="quick-link" href="https://www.nhs.uk" target="_blank" rel="noopener"><span class="ql-icon">🏥</span><span class="ql-label">NHS</span><span class="ql-tag">UK</span></a>
+        <a class="quick-link" href="https://www.gov.uk" target="_blank" rel="noopener"><span class="ql-icon">🏛️</span><span class="ql-label">GOV.UK</span><span class="ql-tag">UK</span></a>
+        <div class="divider"></div>
+        <a class="quick-link" href="https://www.parkrun.org.uk" target="_blank" rel="noopener"><span class="ql-icon">🏃</span><span class="ql-label">parkrun UK</span><span class="ql-tag">Run</span></a>
+        <a class="quick-link" href="https://www.strava.com/dashboard" target="_blank" rel="noopener"><span class="ql-icon">📊</span><span class="ql-label">Strava</span><span class="ql-tag">Run</span></a>
+        <div class="divider"></div>
+        <a class="quick-link" href="https://www.calumetphoto.co.uk" target="_blank" rel="noopener"><span class="ql-icon">📷</span><span class="ql-label">Calumet Photo UK</span><span class="ql-tag">Gear</span></a>
+        <a class="quick-link" href="https://www.wexphotovideo.com" target="_blank" rel="noopener"><span class="ql-icon">📦</span><span class="ql-label">WEX Photo Video</span><span class="ql-tag">Gear</span></a>
+        <a class="quick-link" href="https://www.mpb.com/en-gb" target="_blank" rel="noopener"><span class="ql-icon">♻️</span><span class="ql-label">MPB Used Gear</span><span class="ql-tag">Gear</span></a>
+        <div class="divider"></div>
+        <a class="quick-link" href="https://www.ikea.com/gb/en/" target="_blank" rel="noopener"><span class="ql-icon">🟡</span><span class="ql-label">IKEA UK</span><span class="ql-tag">Home</span></a>
+        <a class="quick-link" href="https://www.johnlewis.com" target="_blank" rel="noopener"><span class="ql-icon">🛍️</span><span class="ql-label">John Lewis</span><span class="ql-tag">Home</span></a>
+        <a class="quick-link" href="https://www.rhs.org.uk" target="_blank" rel="noopener"><span class="ql-icon">🌹</span><span class="ql-label">RHS Garden</span><span class="ql-tag">Garden</span></a>
+        <div class="divider"></div>
+        <a class="quick-link" href="https://www.reddit.com/r/photography/top/?t=day" target="_blank" rel="noopener"><span class="ql-icon">📸</span><span class="ql-label">r/photography today</span><span class="ql-tag">Reddit</span></a>
+        <a class="quick-link" href="https://www.reddit.com/r/Desks/top/?t=week" target="_blank" rel="noopener"><span class="ql-icon">🖥️</span><span class="ql-label">r/Desks this week</span><span class="ql-tag">Reddit</span></a>
+        <a class="quick-link" href="https://www.reddit.com/r/IKEA/top/?t=week" target="_blank" rel="noopener"><span class="ql-icon">🟡</span><span class="ql-label">r/IKEA this week</span><span class="ql-tag">Reddit</span></a>
+        <a class="quick-link" href="https://www.reddit.com/r/running/top/?t=day" target="_blank" rel="noopener"><span class="ql-icon">🏃</span><span class="ql-label">r/running today</span><span class="ql-tag">Reddit</span></a>
+        <a class="quick-link" href="https://www.pinterest.co.uk/search/pins/?q=desk+setup" target="_blank" rel="noopener"><span class="ql-icon">📌</span><span class="ql-label">Pinterest: Desk Setups</span><span class="ql-tag">Browse</span></a>
+        <a class="quick-link" href="https://www.pinterest.co.uk/search/pins/?q=IKEA+hacks" target="_blank" rel="noopener"><span class="ql-icon">📌</span><span class="ql-label">Pinterest: IKEA Hacks</span><span class="ql-tag">Browse</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── UK NEWS 3-COL ── -->
+  <div class="col col-span-2" id="s-uk" style="scroll-margin-top:3rem;">
+    <div class="section-label">🇬🇧 UK News &amp; Tech</div>
+    <div class="card">
+      <div class="card-header">
+        <h2>BBC News <span class="tag-chip tag-uk">UK</span></h2>
+        <a href="https://www.bbc.co.uk/news" target="_blank" rel="noopener">bbc.co.uk/news →</a>
+      </div>
+      <div class="feed-grid cols-2" id="feed-bbc"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2>The Guardian <span class="tag-chip tag-uk">UK</span></h2>
+        <a href="https://www.theguardian.com/uk" target="_blank" rel="noopener">theguardian.com →</a>
+      </div>
+      <div class="feed-grid cols-2" id="feed-guardian"></div>
+    </div>
+  </div>
+
+  <!-- ── PHOTOGRAPHY ── -->
+  <div class="col col-span-3" id="s-photo" style="scroll-margin-top:3rem;">
+    <div class="section-label">📷 Photography — Gear, Inspiration &amp; News</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;">
+      <div class="card">
+        <div class="card-header">
+          <h2>Digital Camera World <span class="tag-chip tag-gear">UK</span></h2>
+          <a href="https://www.digitalcameraworld.com" target="_blank" rel="noopener">Visit →</a>
+        </div>
+        <div id="feed-dcw"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>PetaPixel <span class="tag-chip tag-glob">Global</span></h2>
+          <a href="https://petapixel.com" target="_blank" rel="noopener">Visit →</a>
+        </div>
+        <div id="feed-petapixel"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Flickr / 500px Browse</h2>
+          <a href="https://www.flickr.com/explore" target="_blank" rel="noopener">Explore →</a>
+        </div>
+        <div class="hero-link" style="margin:0;" onclick="window.open('https://www.flickr.com/explore','_blank')" >
+          <div class="hero-link-icon" style="background:var(--uk-lt);">🌅</div>
+          <div class="hero-link-text"><strong>Flickr Explore</strong><span>Daily curated photography — no login needed</span></div>
+          <span style="color:var(--stone);">→</span>
+        </div>
+        <div class="hero-link" onclick="window.open('https://500px.com/editors','_blank')">
+          <div class="hero-link-icon" style="background:#f0f0f0;">✨</div>
+          <div class="hero-link-text"><strong>500px Editors' Choice</strong><span>Hand-picked photos from around the world</span></div>
+          <span style="color:var(--stone);">→</span>
+        </div>
+        <div class="hero-link" onclick="window.open('https://www.bjp-online.com','_blank')">
+          <div class="hero-link-icon" style="background:var(--amber-lt);">📖</div>
+          <div class="hero-link-text"><strong>British Journal of Photography</strong><span>Fine art and documentary photography</span></div>
+          <span style="color:var(--stone);">→</span>
+        </div>
+        <div class="hero-link" onclick="window.open('https://www.dpreview.com','_blank')">
+          <div class="hero-link-icon" style="background:var(--focus-lt);">🔬</div>
+          <div class="hero-link-text"><strong>DPReview</strong><span>In-depth camera &amp; lens reviews</span></div>
+          <span style="color:var(--stone);">→</span>
+        </div>
+        <div class="hero-link" onclick="window.open('https://www.lensrentals.com/blog','_blank')">
+          <div class="hero-link-icon" style="background:var(--sky-lt);">🔭</div>
+          <div class="hero-link-text"><strong>Lensrentals Blog</strong><span>Expert optical testing &amp; deep-dives</span></div>
+          <span style="color:var(--stone);">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GEAR & TECH + DESIGN ── -->
+  <div class="col col-span-2" id="s-gear" style="scroll-margin-top:3rem;">
+    <div class="section-label">⚙️ Gear, Tech &amp; Desk Setups</div>
+    <div class="card">
+      <div class="card-header">
+        <h2>TechRadar <span class="tag-chip tag-gear">UK</span></h2>
+        <a href="https://www.techradar.com" target="_blank" rel="noopener">techradar.com →</a>
+      </div>
+      <div class="feed-grid cols-2" id="feed-techradar"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2>The Verge <span class="tag-chip tag-glob">Global</span></h2>
+        <a href="https://www.theverge.com" target="_blank" rel="noopener">theverge.com →</a>
+      </div>
+      <div class="feed-grid cols-2" id="feed-verge"></div>
+    </div>
+  </div>
+
+  <!-- DESIGN & HOME -->
+  <div class="col" id="s-design" style="scroll-margin-top:3rem;">
+    <div class="section-label">🏠 Design, IKEA &amp; Home</div>
+    <div class="card">
+      <div class="card-header">
+        <h2>Dezeen <span class="tag-chip tag-uk">UK</span></h2>
+        <a href="https://www.dezeen.com" target="_blank" rel="noopener">dezeen.com →</a>
+      </div>
+      <div id="feed-dezeen"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2>Design Milk <span class="tag-chip tag-glob">Global</span></h2>
+        <a href="https://design-milk.com" target="_blank" rel="noopener">design-milk.com →</a>
+      </div>
+      <div id="feed-designmilk"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2>IKEA Hacks</h2>
+        <a href="https://ikeahackers.net" target="_blank" rel="noopener">ikeahackers.net →</a>
+      </div>
+      <div id="feed-ikea"></div>
+    </div>
+  </div>
+
+  <!-- ── RUNNING ── -->
+  <div class="col col-span-2" id="s-running" style="scroll-margin-top:3rem;">
+    <div class="section-label">🏃 Running — UK &amp; Beyond</div>
+    <div class="card">
+      <div class="card-header">
+        <h2>Runner's World UK <span class="tag-chip tag-run">UK</span></h2>
+        <a href="https://www.runnersworld.com/uk/" target="_blank" rel="noopener">Visit →</a>
+      </div>
+      <div class="feed-grid cols-2" id="feed-runnersworld"></div>
+    </div>
+  </div>
+
+  <!-- ── GARDEN ── -->
+  <div class="col" id="s-garden" style="scroll-margin-top:3rem;">
+    <div class="section-label">🌱 Garden &amp; Growing</div>
+    <div class="card">
+      <div class="card-header">
+        <h2>Gardeners' World <span class="tag-chip tag-uk">UK</span></h2>
+        <a href="https://www.gardenersworld.com" target="_blank" rel="noopener">Visit →</a>
+      </div>
+      <div id="feed-gardenersworld"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2>RHS <span class="tag-chip tag-uk">UK</span></h2>
+        <a href="https://www.rhs.org.uk/advice" target="_blank" rel="noopener">rhs.org.uk →</a>
+      </div>
+      <div class="hero-link" onclick="window.open('https://www.rhs.org.uk/advice','_blank')">
+        <div class="hero-link-icon" style="background:#e8f5e9;">🌹</div>
+        <div class="hero-link-text"><strong>RHS Advice</strong><span>Expert seasonal growing guides</span></div>
+        <span style="color:var(--stone);">→</span>
+      </div>
+      <div class="hero-link" onclick="window.open('https://www.rhs.org.uk/whats-on','_blank')">
+        <div class="hero-link-icon" style="background:#e8f5e9;">🎪</div>
+        <div class="hero-link-text"><strong>RHS Events</strong><span>Chelsea, Hampton Court &amp; more</span></div>
+        <span style="color:var(--stone);">→</span>
+      </div>
+      <div class="hero-link" onclick="window.open('https://www.shootgardening.co.uk','_blank')">
+        <div class="hero-link-icon" style="background:var(--focus-lt);">🌱</div>
+        <div class="hero-link-text"><strong>Shoot Gardening</strong><span>Plan your UK garden by season</span></div>
+        <span style="color:var(--stone);">→</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GLOBAL ── -->
+  <div class="col col-span-3" id="s-global" style="scroll-margin-top:3rem;">
+    <div class="section-label">🌍 Global — Architecture, Design &amp; Tech</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;">
+      <div class="card">
+        <div class="card-header">
+          <h2>Wallpaper* <span class="tag-chip tag-glob">Global</span></h2>
+          <a href="https://www.wallpaper.com" target="_blank" rel="noopener">Visit →</a>
+        </div>
+        <div id="feed-wallpaper"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Core77 <span class="tag-chip tag-glob">Global</span></h2>
+          <a href="https://www.core77.com" target="_blank" rel="noopener">Visit →</a>
+        </div>
+        <div id="feed-core77"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Ars Technica <span class="tag-chip tag-glob">Global</span></h2>
+          <a href="https://arstechnica.com" target="_blank" rel="noopener">Visit →</a>
+        </div>
+        <div id="feed-ars"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer style="text-align:center;padding:2rem;color:var(--stone);font-size:0.72rem;font-family:'DM Mono',monospace;border-top:1px solid var(--rule);margin-top:1rem;">
+  KEITH CLOUD · Personal · Curated · No tracking · No ads · No algorithm
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════
+// RSS FEED DEFINITIONS
+// each entry: { id, containerId, url, count, tags, icon }
+// ══════════════════════════════════════════════════
+const RSS_FEEDS = [
+  { id:'bbc',          containerId:'feed-bbc',          url:'https://feeds.bbci.co.uk/news/rss.xml',                       count:4, tags:['news','uk'],            icon:'📰' },
+  { id:'guardian',     containerId:'feed-guardian',      url:'https://www.theguardian.com/uk/rss',                          count:4, tags:['news','uk'],            icon:'📰' },
+  { id:'dcw',          containerId:'feed-dcw',           url:'https://www.digitalcameraworld.com/feeds/articles',            count:4, tags:['photography','gear','uk'], icon:'📷' },
+  { id:'petapixel',    containerId:'feed-petapixel',     url:'https://petapixel.com/feed/',                                 count:4, tags:['photography','gear'],  icon:'📸' },
+  { id:'techradar',    containerId:'feed-techradar',     url:'https://www.techradar.com/rss',                               count:4, tags:['tech','gear','uk'],    icon:'⚙️' },
+  { id:'verge',        containerId:'feed-verge',         url:'https://www.theverge.com/rss/index.xml',                      count:4, tags:['tech','gear'],         icon:'🔷' },
+  { id:'dezeen',       containerId:'feed-dezeen',        url:'https://www.dezeen.com/feed/',                                count:3, tags:['design','interiors'],  icon:'🏛️' },
+  { id:'designmilk',   containerId:'feed-designmilk',    url:'https://design-milk.com/feed/',                               count:3, tags:['design','furniture'],  icon:'🥛' },
+  { id:'ikea',         containerId:'feed-ikea',          url:'https://ikeahackers.net/feed',                                count:3, tags:['ikea','diy','design'], icon:'🟡' },
+  { id:'runnersworld', containerId:'feed-runnersworld',  url:'https://www.runnersworld.com/uk/feed/',                       count:4, tags:['running','uk'],        icon:'👟' },
+  { id:'gardenersworld',containerId:'feed-gardenersworld',url:'https://www.gardenersworld.com/feed/',                       count:3, tags:['garden','uk'],         icon:'🌻' },
+  { id:'wallpaper',    containerId:'feed-wallpaper',     url:'https://www.wallpaper.com/rss',                               count:3, tags:['design','global','art'], icon:'🎨' },
+  { id:'core77',       containerId:'feed-core77',        url:'https://www.core77.com/rss',                                  count:3, tags:['design','global','product'], icon:'⚡' },
+  { id:'ars',          containerId:'feed-ars',           url:'https://feeds.arstechnica.com/arstechnica/index',             count:3, tags:['tech','global'],       icon:'🚀' },
+];
+
+// ══════════════════════════════════════════════════
+// PREFS ENGINE
+// ══════════════════════════════════════════════════
+const PKEY = 'keithcloud_v2';
+function loadPrefs() {
+  try { return JSON.parse(localStorage.getItem(PKEY)) || {likes:{},dislikes:{},shares:{},tagScores:{}}; }
+  catch(e) { return {likes:{},dislikes:{},shares:{},tagScores:{}}; }
+}
+function savePrefs(p) { try { localStorage.setItem(PKEY, JSON.stringify(p)); } catch(e){} updateBadge(); }
+
+function updateBadge() {
+  const p = loadPrefs();
+  const n = Object.keys(p.likes).length + Object.keys(p.shares).length;
+  document.getElementById('taste-count').textContent = n;
+}
+
+function bumpTags(tags, delta) {
+  const p = loadPrefs();
+  if (!p.tagScores) p.tagScores = {};
+  tags.forEach(t => { p.tagScores[t] = (p.tagScores[t]||0) + delta; });
+  savePrefs(p);
+}
+
+function toggleLike(itemId, tags, url, title, source, thumb) {
+  const p = loadPrefs();
+  if (p.likes[itemId]) {
+    delete p.likes[itemId];
+    bumpTags(tags, -2);
+    showToast('👍 Like removed');
+  } else {
+    delete p.dislikes[itemId];
+    p.likes[itemId] = { url, title, source, thumb, ts: Date.now() };
+    bumpTags(tags, 2);
+    showToast('👍 Liked — Keith Cloud is learning your taste');
+  }
+  savePrefs(p);
+  refreshArticle(itemId, tags, url, title, source, thumb);
+}
+
+function toggleDislike(itemId, tags, url, title, source, thumb) {
+  const p = loadPrefs();
+  if (p.dislikes[itemId]) {
+    delete p.dislikes[itemId];
+    bumpTags(tags, 1);
+    showToast('Dislike removed');
+  } else {
+    delete p.likes[itemId];
+    p.dislikes[itemId] = { ts: Date.now() };
+    bumpTags(tags, -2);
+    showToast('👎 Noted — fewer of this kind');
+  }
+  savePrefs(p);
+  refreshArticle(itemId, tags, url, title, source, thumb);
+}
+
+function shareItem(itemId, url, title) {
+  const p = loadPrefs();
+  if (!p.shares) p.shares = {};
+  p.shares[itemId] = { url, title, ts: Date.now() };
+  savePrefs(p);
+  if (navigator.share) {
+    navigator.share({ title, url }).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(url).then(()=>showToast('🔗 Link copied!')).catch(()=>showToast('🔗 ' + url));
+  }
+  const btn = document.querySelector(`[data-share-id="${itemId}"]`);
+  if (btn) { btn.textContent = '✓ Shared'; btn.classList.add('share-copied'); setTimeout(()=>{ btn.textContent='🔗 Share'; btn.classList.remove('share-copied'); }, 2000); }
+}
+
+// ══════════════════════════════════════════════════
+// ARTICLE RENDERING
+// ══════════════════════════════════════════════════
+function articleId(url) {
+  // stable short id from url
+  let h = 0;
+  for (let i = 0; i < url.length; i++) { h = ((h << 5) - h) + url.charCodeAt(i); h |= 0; }
+  return 'a' + Math.abs(h).toString(36);
+}
+
+function renderArticle(item, tags, icon) {
+  const p    = loadPrefs();
+  const id   = articleId(item.url);
+  const liked    = !!p.likes[id];
+  const disliked = !!p.dislikes[id];
+
+  const thumbHTML = item.thumb
+    ? `<img class="article-thumb" src="${item.thumb}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      + `<div class="article-thumb-placeholder" style="display:none;">${icon}</div>`
+    : `<div class="article-thumb-placeholder">${icon}</div>`;
+
+  const dateStr = item.date ? relativeDate(item.date) : '';
+
+  // escape for inline JS attrs
+  const safeTitle  = item.title.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+  const safeUrl    = item.url.replace(/'/g,"\\'");
+  const safeSource = (item.source||'').replace(/'/g,"\\'");
+  const safeThumb  = (item.thumb||'').replace(/'/g,"\\'");
+  const tagsJSON   = JSON.stringify(tags);
+
+  return `<div class="article-card${liked?' liked':''}${disliked?' disliked':''}" id="ac-${id}">
+    <a href="${item.url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+      ${thumbHTML}
+      <div class="article-body">
+        <div class="article-source">${item.source||''}</div>
+        <div class="article-title">${item.title}</div>
+        ${dateStr ? `<div class="article-date">${dateStr}</div>` : ''}
+      </div>
+    </a>
+    <div class="article-actions">
+      <button class="action-btn${liked?' like-active':''}"
+        onclick="toggleLike('${id}',${tagsJSON},'${safeUrl}','${safeTitle}','${safeSource}','${safeThumb}')">
+        👍 ${liked?'Liked':'Like'}
+      </button>
+      <button class="action-btn${disliked?' dislike-active':''}"
+        onclick="toggleDislike('${id}',${tagsJSON},'${safeUrl}','${safeTitle}','${safeSource}','${safeThumb}')">
+        👎 ${disliked?'Disliked':'Dislike'}
+      </button>
+      <span class="spacer"></span>
+      <button class="action-btn" data-share-id="${id}"
+        onclick="shareItem('${id}','${safeUrl}','${safeTitle}')">
+        🔗 Share
+      </button>
+    </div>
+  </div>`;
+}
+
+function refreshArticle(id, tags, url, title, source, thumb) {
+  const el = document.getElementById('ac-' + id);
+  if (!el) return;
+  // find feed def to get icon
+  const feedDef = RSS_FEEDS.find(f => f.tags.join() === tags.join()) || {};
+  const icon = feedDef.icon || '📄';
+  el.outerHTML = renderArticle({ url, title, source, thumb }, tags, icon);
+}
+
+function skeletonHTML(count) {
+  return Array.from({length:count}, () =>
+    `<div class="skel-wrap">
+      <div class="skeleton skel-thumb"></div>
+      <div class="skeleton skel-line short" style="margin-top:10px;"></div>
+      <div class="skeleton skel-line long"></div>
+      <div class="skeleton skel-line med"></div>
+    </div>`
+  ).join('');
+}
+
+// ══════════════════════════════════════════════════
+// RSS FETCHING via rss2json.com (free, no key needed for low volume)
+// ══════════════════════════════════════════════════
+const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
+
+function extractThumb(item) {
+  // 1. enclosure
+  if (item.enclosure && item.enclosure.link && item.enclosure.type && item.enclosure.type.startsWith('image')) return item.enclosure.link;
+  // 2. thumbnail field
+  if (item.thumbnail && item.thumbnail.startsWith('http')) return item.thumbnail;
+  // 3. media:content in description
+  const m = (item.description||'').match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (m) return m[1];
+  // 4. content field
+  const m2 = (item.content||'').match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (m2) return m2[1];
+  return null;
+}
+
+function relativeDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d)) return '';
+  const diff = Date.now() - d.getTime();
+  const mins  = Math.floor(diff / 60000);
+  const hours = Math.floor(diff / 3600000);
+  const days  = Math.floor(diff / 86400000);
+  if (mins < 60)  return `${mins}m ago`;
+  if (hours < 24) return `${hours}h ago`;
+  if (days < 7)   return `${days}d ago`;
+  return d.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+}
+
+async function loadFeed(def) {
+  const el = document.getElementById(def.containerId);
+  if (!el) return;
+  el.innerHTML = skeletonHTML(def.count);
+
+  try {
+    const resp = await fetch(PROXY + encodeURIComponent(def.url) + '&count=' + (def.count * 2));
+    if (!resp.ok) throw new Error('Network error');
+    const data = await resp.json();
+    if (!data.items || !data.items.length) throw new Error('No items');
+
+    const items = data.items.slice(0, def.count);
+    el.innerHTML = items.map(raw => {
+      const thumb = extractThumb(raw);
+      return renderArticle(
+        { url: raw.link, title: raw.title, source: data.feed?.title || def.id, thumb, date: raw.pubDate },
+        def.tags,
+        def.icon
+      );
+    }).join('');
+  } catch(e) {
+    el.innerHTML = `<div class="feed-error">
+      Couldn't load feed — <a href="${def.url.split('/feed')[0]}" target="_blank" rel="noopener">visit site directly →</a>
+    </div>`;
+  }
+}
+
+// ══════════════════════════════════════════════════
+// TASTE PANEL
+// ══════════════════════════════════════════════════
+function openTastePanel() { renderTastePanel(); document.getElementById('taste-overlay').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeTastePanel() { document.getElementById('taste-overlay').classList.remove('open'); document.body.style.overflow=''; }
+function closeTasteOverlay(e) { if (e.target===document.getElementById('taste-overlay')) closeTastePanel(); }
+
+function renderTastePanel() {
+  const p = loadPrefs();
+  const liked    = Object.entries(p.likes||{}).sort((a,b)=>b[1].ts-a[1].ts);
+  const scores   = Object.entries(p.tagScores||{}).sort((a,b)=>b[1]-a[1]);
+  const topTags  = scores.filter(([,v])=>v>0).slice(0,10);
+  const botTags  = scores.filter(([,v])=>v<0).sort((a,b)=>a[1]-b[1]).slice(0,5);
+  const maxS = topTags[0]?.[1] || 1;
+  const minS = botTags[0] ? Math.abs(botTags[0][1]) : 1;
+
+  const totalI = liked.length + Object.keys(p.shares||{}).length;
+
+  let html = '';
+  if (totalI === 0 && !Object.keys(p.dislikes||{}).length) {
+    html = `<div class="taste-empty"><div class="big">✦</div><strong>Your taste profile is empty</strong><br><br>
+    Like, dislike and share articles across Keith Cloud — the more you interact, the smarter this gets.</div>`;
+  } else {
+    html += `<div class="taste-section"><h3>Activity</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;text-align:center;">
+      <div style="background:var(--like-lt);border-radius:8px;padding:0.7rem;">
+        <div style="font-size:1.3rem;font-weight:600;color:var(--like);">${Object.keys(p.likes||{}).length}</div>
+        <div style="font-size:0.65rem;color:var(--stone);font-family:'DM Mono',monospace;">LIKED</div>
+      </div>
+      <div style="background:var(--dislike-lt);border-radius:8px;padding:0.7rem;">
+        <div style="font-size:1.3rem;font-weight:600;color:var(--dislike);">${Object.keys(p.dislikes||{}).length}</div>
+        <div style="font-size:0.65rem;color:var(--stone);font-family:'DM Mono',monospace;">DISLIKED</div>
+      </div>
+      <div style="background:var(--sky-lt);border-radius:8px;padding:0.7rem;">
+        <div style="font-size:1.3rem;font-weight:600;color:var(--sky);">${Object.keys(p.shares||{}).length}</div>
+        <div style="font-size:0.65rem;color:var(--stone);font-family:'DM Mono',monospace;">SHARED</div>
+      </div>
+    </div></div>`;
+
+    if (topTags.length) {
+      html += `<div class="taste-section"><h3>Topics you love</h3>`;
+      topTags.forEach(([tag,score]) => {
+        const pct = Math.round((score/maxS)*100);
+        html += `<div class="taste-bar-item"><div class="taste-bar-label">${tag}</div>
+        <div class="taste-bar-track"><div class="taste-bar-fill" style="width:${pct}%"></div></div>
+        <div class="taste-count-num">+${score}</div></div>`;
+      });
+      html += `</div>`;
+    }
+    if (botTags.length) {
+      html += `<div class="taste-section"><h3>Showing less of</h3>`;
+      botTags.forEach(([tag,score]) => {
+        const pct = Math.round((Math.abs(score)/minS)*100);
+        html += `<div class="taste-bar-item"><div class="taste-bar-label">${tag}</div>
+        <div class="taste-bar-track"><div class="taste-bar-fill neg" style="width:${pct}%"></div></div>
+        <div class="taste-count-num" style="color:var(--dislike);">${score}</div></div>`;
+      });
+      html += `</div>`;
+    }
+    if (liked.length) {
+      html += `<div class="taste-section"><h3>Liked Articles (${liked.length})</h3>`;
+      liked.forEach(([id,data]) => {
+        const when = new Date(data.ts).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+        html += `<div class="liked-item">
+          ${data.thumb ? `<img class="liked-item-thumb" src="${data.thumb}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}
+          <div class="liked-item-title">${data.title}</div>
+          <div class="liked-item-meta">${data.source} · ${when}</div>
+          <a class="liked-item-link" href="${data.url}" target="_blank" rel="noopener">Read article →</a>
+        </div>`;
+      });
+      html += `</div>`;
+    }
+  }
+  document.getElementById('taste-body').innerHTML = html;
+}
+
+function exportTaste() {
+  const blob = new Blob([JSON.stringify(loadPrefs(),null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='keithcloud-taste.json'; a.click();
+  showToast('📤 Taste profile exported');
+}
+function clearTaste() {
+  if (confirm('Clear all taste data? Cannot be undone.')) {
+    localStorage.removeItem(PKEY); updateBadge(); renderTastePanel();
+    showToast('🗑 Cleared');
+  }
+}
+
+// ══════════════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════════════
+let _tt;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(_tt); _tt = setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+// ══════════════════════════════════════════════════
+// SEARCH
+// ══════════════════════════════════════════════════
+let _engine = 'https://duckduckgo.com/?q=';
+const _engines = { ddg:'https://duckduckgo.com/?q=', google:'https://www.google.com/search?q=', bing:'https://www.bing.com/search?q=', brave:'https://search.brave.com/search?q=', ecosia:'https://www.ecosia.org/search?q=' };
+function setEngine(k,btn) { _engine=_engines[k]; document.querySelectorAll('.se-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+function doSearch() { const q=document.getElementById('search-input').value.trim(); if(q) window.open(_engine+encodeURIComponent(q),'_blank'); }
+document.getElementById('search-input').addEventListener('keydown',e=>{ if(e.key==='Enter') doSearch(); });
+
+// ══════════════════════════════════════════════════
+// CLOCK
+// ══════════════════════════════════════════════════
+function tick() {
+  const n=new Date();
+  document.getElementById('clock').textContent = n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  document.getElementById('date-display').textContent = n.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+tick(); setInterval(tick,1000);
+
+// ══════════════════════════════════════════════════
+// NAV SCROLL
+// ══════════════════════════════════════════════════
+function scrollTo(id) { const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
+const _sections=['s-uk','s-photo','s-gear','s-design','s-running','s-garden','s-global','s-links'];
+const _pills=document.querySelectorAll('.nav-pill');
+const _obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ const i=_sections.indexOf(e.target.id); if(i>-1){_pills.forEach(p=>p.classList.remove('active')); _pills[i].classList.add('active');}}});
+},{rootMargin:'-25% 0px -65% 0px'});
+_sections.forEach(id=>{ const el=document.getElementById(id); if(el)_obs.observe(el); });
+
+// ══════════════════════════════════════════════════
+// INIT — load all feeds with staggered delay
+// ══════════════════════════════════════════════════
+updateBadge();
+RSS_FEEDS.forEach((def, i) => setTimeout(()=>loadFeed(def), i * 150));
+
+// ══════════════════════════════════════════════════
+// MANUAL REFRESH
+// ══════════════════════════════════════════════════
+function refreshAllFeeds() {
+  const btn  = document.getElementById('refresh-btn');
+  const icon = document.getElementById('refresh-icon');
+  btn.disabled = true;
+  icon.style.display = 'inline-block';
+  icon.style.animation = 'spin 0.8s linear infinite';
+
+  // inject spin keyframes if not already there
+  if (!document.getElementById('spin-style')) {
+    const s = document.createElement('style');
+    s.id = 'spin-style';
+    s.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+    document.head.appendChild(s);
+  }
+
+  const total = RSS_FEEDS.length;
+  let done = 0;
+
+  const finish = () => {
+    done++;
+    if (done >= total) {
+      btn.disabled = false;
+      icon.style.animation = '';
+      const now = new Date();
+      document.getElementById('last-updated').textContent =
+        'Updated ' + now.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit'});
+      showToast('✓ Keith Cloud refreshed');
+    }
+  };
+
+  RSS_FEEDS.forEach(def => loadFeed(def).then(finish).catch(finish));
+}
+
+// Set initial last-updated on first load
+window.addEventListener('load', () => {
+  const now = new Date();
+  document.getElementById('last-updated').textContent =
+    'Loaded ' + now.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit'});
+});
+
+</script>
+</body>
+</html>
